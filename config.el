@@ -2,7 +2,7 @@
 
 ;; Place your private configuration here
 
-(setq doom-font (font-spec :family "Fira Code" :size 18))
+(setq doom-font (font-spec :family "Deja Vu Sans Mono" :size 14))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (setq lsp-python-ms-executable
