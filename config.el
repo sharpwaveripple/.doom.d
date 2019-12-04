@@ -2,6 +2,8 @@
 
 ;; Place your private configuration here
 
+(setq doom-font (font-spec :family "Noto Sans" :size 16))
+
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (setq lsp-python-ms-executable
       "~/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer")
