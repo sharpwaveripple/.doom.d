@@ -30,3 +30,8 @@
       :n  "SPC SPC" #'evil-avy-goto-char-2)
 
 (setq display-line-numbers-type 'relative)
+
+;; Allow C-h to trigger which-key before it is done automatically
+(setq which-key-show-early-on-C-h t)
+(setq which-key-idle-delay 0.1)
+(setq which-key-idle-secondary-delay 0.05)
