@@ -2,7 +2,7 @@
 
 ;; Place your private configuration here
 
-(setq doom-font (font-spec :family "Noto Sans" :size 16))
+(setq doom-font (font-spec :family "Noto Mono" :size 16))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (setq lsp-python-ms-executable
