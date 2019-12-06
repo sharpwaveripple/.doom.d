@@ -2,7 +2,7 @@
 
 ;; Place your private configuration here
 
-(setq doom-font (font-spec :family "Deja Vu Sans Mono" :size 14))
+(setq doom-font (font-spec :family "Deja Vu Sans Mono" :size 18))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (setq lsp-python-ms-executable
@@ -28,8 +28,7 @@
 
 (map! ;; ported from vim-unimpaired
       :n  "] p" #'evil-unimpaired-paste-below
-      :n  "[ P" #'evil-unimpaired-paste-above
-      :n  "SPC SPC" #'evil-avy-goto-char-2)
+      :n  "[ P" #'evil-unimpaired-paste-above)
 
 (setq display-line-numbers-type nil)
 
