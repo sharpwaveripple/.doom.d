@@ -37,5 +37,5 @@
 (setq which-key-idle-delay 0.1)
 (setq which-key-idle-secondary-delay 0.05)
 
-;; evil easymotion integration
-;; https://github.com/hlissner/doom-emacs/issues/1672
+(global-unset-key (kbd "C-SPC"))
+(evilem-default-keybindings "C-SPC")
