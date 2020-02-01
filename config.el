@@ -69,5 +69,21 @@
 
 (add-hook 'after-save-hook #'format-biblio)
 
+
+(defun open-popup-on-side-or-below (buffer &optional alist)
+  (+popup-display-buffer-stacked-side-window-fn
+   buffer (append `((side . ,(if (one-window-p)
+                                 'right
+                               'bottom)))
+                  alist)))
+
+;; Wrap in an `after!' block so that you popup rule takes precedence over
+;; default ones.
+(after! python
+  (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side-or-below)))
+
+(after! ess
+  (set-popup-rule! "^\\*R" :actions '(open-popup-on-side-or-below)))
+
 ;; change repl settings:
 ;; https://github.com/hlissner/doom-emacs/issues/171
