@@ -49,14 +49,6 @@
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
-;; (use-package! org-ref
-;;   :custom
-;;   (org-ref-completion-library 'org-ref-ivy-cite)
-;;   (org-ref-default-bibliography '("~/papers/references_abbr.bib"))
-;;   (org-ref-ivy-cite)
-;;   :init
-;;   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
-
 (defun format-biblio ()
   "Make short form biblio on editing the file"
   (when (file-equal-p buffer-file-name "~/papers/references.bib")
