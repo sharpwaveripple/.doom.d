@@ -40,11 +40,6 @@
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
 
-;; (def-package! ox-pandoc
-;;   :after org
-;;   :init
-;;   (add-hook 'org-mode-hook (lambda () (require 'ox-pandoc))))
-
 (def-package! org-ref
   :after org
   :custom
