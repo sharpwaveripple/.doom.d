@@ -40,11 +40,6 @@
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
 
-;; (def-package! ox-pandoc
-;;   :after org
-;;   :init
-;;   (add-hook 'org-mode-hook (lambda () (require 'ox-pandoc))))
-
 (def-package! org-ref
   :after org
   :custom
@@ -53,14 +48,6 @@
   (org-ref-ivy-cite)
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
-
-;; (use-package! org-ref
-;;   :custom
-;;   (org-ref-completion-library 'org-ref-ivy-cite)
-;;   (org-ref-default-bibliography '("~/papers/references_abbr.bib"))
-;;   (org-ref-ivy-cite)
-;;   :init
-;;   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
 (defun format-biblio ()
   "Make short form biblio on editing the file"
