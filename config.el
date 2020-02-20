@@ -74,3 +74,5 @@
 
 ;; change repl settings:
 ;; https://github.com/hlissner/doom-emacs/issues/171
+
+(global-visual-line-mode t)
