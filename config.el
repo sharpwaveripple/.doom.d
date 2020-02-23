@@ -56,23 +56,26 @@
 
 (add-hook 'after-save-hook #'format-biblio)
 
+(global-visual-line-mode t)
 
-(defun open-popup-on-side-or-below (buffer &optional alist)
-  (+popup-display-buffer-stacked-side-window-fn
-   buffer (append `((side . ,(if (one-window-p)
-                                 'right
-                               'bottom)))
-                  alist)))
+(set-popup-rule! "\\^*Python" :side 'right :size 0.5)
+(set-popup-rule! "\\^*R" :side 'right :size 0.5)
+
+;; (defun open-popup-on-side-or-below (buffer &optional alist)
+;;   (+popup-display-buffer-stacked-side-window-fn
+;;    buffer (append `((side . ,(if (one-window-p)
+;;                                  'right
+;;                                'bottom)))
+;;                   alist)))
 
 ;; Wrap in an `after!' block so that you popup rule takes precedence over
 ;; default ones.
-(after! python
-  (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side-or-below)))
+;; (after! python
+;;   (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side-or-below)))
 
-(after! ess
-  (set-popup-rule! "^\\*R" :actions '(open-popup-on-side-or-below)))
+;; (after! ess
+;;   (set-popup-rule! "^\\*R" :actions '(open-popup-on-side-or-below)))
 
 ;; change repl settings:
 ;; https://github.com/hlissner/doom-emacs/issues/171
 
-(global-visual-line-mode t)
