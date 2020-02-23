@@ -59,7 +59,8 @@
 (global-visual-line-mode t)
 
 (set-popup-rule! "\\^*Python" :side 'right :size 0.5)
-(set-popup-rule! "\\^*R" :side 'right :size 0.5)
+;; why does this not work!
+;; (set-popup-rule! "\\^*R" :side 'right :size 0.5)
 
 ;; (defun open-popup-on-side-or-below (buffer &optional alist)
 ;;   (+popup-display-buffer-stacked-side-window-fn
