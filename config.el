@@ -58,7 +58,7 @@
 
 (global-visual-line-mode t)
 
-(set-popup-rule! "\\^*Python" :side 'right :size 0.5)
+(set-popup-rule! "\\^*Python" :side 'right :size 0.4)
 ;; why does this not work!
 ;; (set-popup-rule! "\\^*R" :side 'right :size 0.5)
 
