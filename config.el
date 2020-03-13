@@ -58,7 +58,10 @@
 
 (global-visual-line-mode t)
 
-(set-popup-rule! "\\^*Python" :side 'right :size 0.4)
+(set-popup-rule! "\\^*Python" :side 'right :size 0.4 :noesc t)
+
+(when (executable-find "ipython")
+  (setq python-shell-interpreter "ipython"))
 ;; why does this not work!
 ;; (set-popup-rule! "\\^*R" :side 'right :size 0.5)
 
