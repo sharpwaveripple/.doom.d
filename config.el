@@ -34,7 +34,7 @@
 
 ;; Allow C-h to trigger which-key before it is done automatically
 (setq which-key-show-early-on-C-h t)
-(setq which-key-idle-delay 0.1)
+(setq which-key-idle-delay 0.3)
 (setq which-key-idle-secondary-delay 0.05)
 
 (global-unset-key (kbd "C-SPC"))
