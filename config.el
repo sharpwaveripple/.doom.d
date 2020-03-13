@@ -8,8 +8,8 @@
 (setq lsp-python-ms-executable
       "~/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer")
 
-(setq company-idle-delay 0.1
-      company-minimum-prefix-length 1)
+(setq company-idle-delay 0.3
+      company-minimum-prefix-length 2)
 
 ;; Allow jk and kj to be used as escape keys
 (setq evil-escape-unordered-key-sequence t)
