@@ -58,7 +58,8 @@
 
 (global-visual-line-mode t)
 
-;; (set-popup-rule! "\\^*Python" :side 'right :size 0.4 :noesc t)
+;; (set! :popup "\\^*Python" :side 'right :size 0.4)
+;; (set-popup-rule! "\\^*Python" :side 'right :size 0.4 :noesc nil)
 
 ;; this causes r files to open in popup
 ;; (set-popup-rule! "\\^*R" :side 'right :size 0.5)
