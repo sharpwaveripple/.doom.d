@@ -58,25 +58,25 @@
 
 (global-visual-line-mode t)
 
-(set-popup-rule! "\\^*Python" :side 'right :size 0.4 :noesc t)
+;; (set-popup-rule! "\\^*Python" :side 'right :size 0.4 :noesc t)
 
-;; why does this not work!
+;; this causes r files to open in popup
 ;; (set-popup-rule! "\\^*R" :side 'right :size 0.5)
 
-;; (defun open-popup-on-side-or-below (buffer &optional alist)
-;;   (+popup-display-buffer-stacked-side-window-fn
-;;    buffer (append `((side . ,(if (one-window-p)
-;;                                  'right
-;;                                'bottom)))
-;;                   alist)))
+(defun open-popup-on-side-or-below (buffer &optional alist)
+  (+popup-display-buffer-stacked-side-window-fn
+   buffer (append `((side . ,(if (one-window-p)
+                                 'right
+                               'bottom)))
+                  alist)))
 
 ;; Wrap in an `after!' block so that you popup rule takes precedence over
 ;; default ones.
-;; (after! python
-;;   (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side-or-below)))
+(after! python
+  (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side-or-below)))
 
-;; (after! ess
-;;   (set-popup-rule! "^\\*R" :actions '(open-popup-on-side-or-below)))
+(after! ess
+  (set-popup-rule! "^\\*R" :actions '(open-popup-on-side-or-below)))
 
 ;; change repl settings:
 ;; https://github.com/hlissner/doom-emacs/issues/171
