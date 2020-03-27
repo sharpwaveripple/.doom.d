@@ -55,7 +55,7 @@
     (shell-command "python3 ~/papers/abbreviate.py")))
 
 (add-hook 'after-save-hook #'format-biblio)
-
+(add-hook 'org-mode-hook (lambda () (smartparens-mode -1)))
 (global-visual-line-mode t)
 
 ;; (set! :popup "\\^*Python" :side 'right :size 0.4)
