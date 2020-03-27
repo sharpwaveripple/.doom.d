@@ -66,16 +66,17 @@
 
 (defun open-popup-on-side (buffer &optional alist)
   (+popup-display-buffer-stacked-side-window-fn
-   buffer (append `((side . right))
+   buffer (append `((side . right)
+                    (size . 0.4))
                   alist)))
 
 ;; Wrap in an `after!' block so that you popup rule takes precedence over
 ;; default ones.
 (after! python
-  (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side-or-below)))
+  (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side)))
 
 (after! ess
-  (set-popup-rule! "^\\*R" :actions '(open-popup-on-side-or-below)))
+  (set-popup-rule! "^\\*R" :actions '(open-popup-on-side)))
 
 ;; change repl settings:
 ;; https://github.com/hlissner/doom-emacs/issues/171
