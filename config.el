@@ -64,7 +64,7 @@
 ;; this causes r files to open in popup
 ;; (set-popup-rule! "\\^*R" :side 'right :size 0.5)
 
-(defun open-popup-on-side-or-below (buffer &optional alist)
+(defun open-popup-on-side (buffer &optional alist)
   (+popup-display-buffer-stacked-side-window-fn
    buffer (append `((side . right))
                   alist)))
