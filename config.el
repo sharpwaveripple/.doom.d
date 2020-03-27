@@ -39,7 +39,7 @@
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
 
-(def-package! org-ref
+(use-package! org-ref
   :after org
   :custom
   (org-ref-completion-library 'org-ref-ivy-cite)
@@ -65,9 +65,7 @@
 
 (defun open-popup-on-side-or-below (buffer &optional alist)
   (+popup-display-buffer-stacked-side-window-fn
-   buffer (append `((side . ,(if (one-window-p)
-                                 'right
-                               'bottom)))
+   buffer (append `((side . right))
                   alist)))
 
 ;; Wrap in an `after!' block so that you popup rule takes precedence over
