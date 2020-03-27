@@ -26,9 +26,8 @@
   (evil-paste-after 1)
   (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
 
-(map! ;; ported from vim-unimpaired
-      :n  "] p" #'evil-unimpaired-paste-below
-      :n  "[ P" #'evil-unimpaired-paste-above)
+(load! "bindings")
+
 
 (setq display-line-numbers-type nil)
 
