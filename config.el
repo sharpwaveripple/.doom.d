@@ -55,11 +55,6 @@
 (add-hook 'org-mode-hook (lambda () (smartparens-mode -1)))
 (global-visual-line-mode t)
 
-;; (set! :popup "\\^*Python" :side 'right :size 0.4)
-;; (set-popup-rule! "\\^*Python" :side 'right :size 0.4 :noesc nil)
-
-;; this causes r files to open in popup
-;; (set-popup-rule! "\\^*R" :side 'right :size 0.5)
 
 (defun open-popup-on-side (buffer &optional alist)
   (+popup-display-buffer-stacked-side-window-fn
