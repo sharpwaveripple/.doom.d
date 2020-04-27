@@ -54,7 +54,17 @@
 (add-hook 'after-save-hook #'format-biblio)
 (add-hook 'org-mode-hook (lambda () (smartparens-mode -1)))
 (global-visual-line-mode t)
+;; (add-hook 'org-pandoc-after-processing-ms-hook 'recentf-cleanup)
 
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html
+(setq! recentf-exclude '("\\.tmp?$"))
+;; (defun recentf-cleanup
+;;   (lambda ()
+;;     (recentf-cleanup)))
+
+;; (defun export-to-docx-hook ()
+;;   (when org-pandoc-export-to-docx
+;;     (recentf-cleanup)))
 
 (defun open-popup-on-side (buffer &optional alist)
   (+popup-display-buffer-stacked-side-window-fn
@@ -69,3 +79,7 @@
 
 (after! ess
   (set-popup-rule! "^\\*R" :actions '(open-popup-on-side)))
+
+(add-hook 'vterm-mode-hook
+          (lambda ()
+            (read-only-mode -1)))
