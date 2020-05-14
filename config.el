@@ -83,3 +83,14 @@
 (add-hook 'vterm-mode-hook
           (lambda ()
             (read-only-mode -1)))
+
+;; file backends
+;; ;; set default `company-backends'
+;; (setq company-backends
+;;       '((company-files          ; files & directory
+;;          company-keywords       ; keywords
+;;          company-capf
+;;          company-yasnippet
+;;          )
+;;         (company-abbrev company-dabbrev)
+;;         ))
