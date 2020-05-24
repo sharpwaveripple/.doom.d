@@ -37,19 +37,22 @@
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
 
+(map! :leader
+      :desc "Search buffer" "s b" #'counsel-grep)
+
 (use-package! org-ref
   :after org
   :custom
   (org-ref-completion-library 'org-ref-ivy-cite)
-  (org-ref-default-bibliography '("~/papers/references_abbr.bib"))
+  (org-ref-default-bibliography '("~/work/references/references_abbr.bib"))
   (org-ref-ivy-cite)
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
 (defun format-biblio ()
   "Make short form biblio on editing the file"
-  (when (file-equal-p buffer-file-name "~/papers/references.bib")
-    (shell-command "python3 ~/papers/abbreviate.py")))
+  (when (file-equal-p buffer-file-name "~/work/references/references.bib")
+    (shell-command "python3 ~/work/references/abbreviate.py")))
 
 (add-hook 'after-save-hook #'format-biblio)
 (add-hook 'org-mode-hook (lambda () (smartparens-mode -1)))
