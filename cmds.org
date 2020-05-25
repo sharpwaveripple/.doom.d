@@ -8,3 +8,6 @@ Note that SPC-b-k doesn't work in the same way, as does C-x-0
 * Insert org-mode code block
 In insert mode, type
 <s then <tab>
+
+* Start jupyter notebook
+M-x ein:jupyter-server-start
