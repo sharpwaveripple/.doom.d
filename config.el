@@ -97,3 +97,7 @@
 ;;          )
 ;;         (company-abbrev company-dabbrev)
 ;;         ))
+
+(setq evil-move-cursor-back nil)
+
+(setq ein:output-area-inlined-images t)

@@ -22,7 +22,7 @@
        company             ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +fuzzy +icons) ; a search engine for love and life
+       (ivy +icons)        ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -87,7 +87,7 @@
        ;;direnv
        ;;docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
-       ;; ein              ; tame Jupyter notebooks with emacs
+       ein              ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup              ; helps you navigate your code and documentation

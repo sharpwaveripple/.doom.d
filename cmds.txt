@@ -1,5 +1,0 @@
-Kill buffer:
-
-C-x k
-
-Note that SPC-b-k doesn't work in the same way, as does C-x-0
