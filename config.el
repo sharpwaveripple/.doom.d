@@ -98,9 +98,9 @@
 ;;         (company-abbrev company-dabbrev)
 ;;         ))
 
-(setq evil-move-cursor-back nil)
+(setq! evil-move-cursor-back nil)
 
-(setq ein:output-area-inlined-images t)
+(setq! ein:output-area-inlined-images t)
 
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-display-inline-images)
