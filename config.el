@@ -60,7 +60,10 @@
 ;; (add-hook 'org-pandoc-after-processing-ms-hook 'recentf-cleanup)
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html
-(setq! recentf-exclude '("\\.tmp?$"))
+;; (add-to-list 'recentf-exclude '("\\.tmp?$"))
+(setq! recentf-exclude '("~/.orhc-bibtex-cache"
+                         "~/.emacs.d/.local/*"))
+
 ;; (defun recentf-cleanup
 ;;   (lambda ()
 ;;     (recentf-cleanup)))
