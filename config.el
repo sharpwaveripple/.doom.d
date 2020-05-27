@@ -109,3 +109,5 @@
 (setq! org-startup-folded t)
 
 (setq! browse-url-browser-function 'browse-url-firefox)
+
+(setq! vterm-always-compile-module t)
