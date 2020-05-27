@@ -106,3 +106,5 @@
 (add-hook 'org-mode-hook 'org-display-inline-images)
 
 (setq! org-startup-folded t)
+
+(setq! browse-url-browser-function 'browse-url-firefox)
