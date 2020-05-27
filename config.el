@@ -83,9 +83,7 @@
 (after! ess
   (set-popup-rule! "^\\*R" :actions '(open-popup-on-side)))
 
-(add-hook 'vterm-mode-hook
-          (lambda ()
-            (read-only-mode -1)))
+(add-hook 'vterm-mode-hook (lambda () (read-only-mode -1)))
 
 ;; file backends
 ;; ;; set default `company-backends'
