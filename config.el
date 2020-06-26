@@ -26,7 +26,6 @@
 
 (load! "bindings")
 
-
 (setq display-line-numbers-type nil)
 
 ;; Allow C-h to trigger which-key before it is done automatically
@@ -57,13 +56,14 @@
 (add-hook 'after-save-hook #'format-biblio)
 (add-hook 'org-mode-hook (lambda () (smartparens-mode -1)))
 (global-visual-line-mode t)
+
+(setq! recentf-exclude '("~/.orhc-bibtex-cache"
+                         "~/.emacs.d/.local/*"))
+
 ;; (add-hook 'org-pandoc-after-processing-ms-hook 'recentf-cleanup)
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html
 ;; (add-to-list 'recentf-exclude '("\\.tmp?$"))
-(setq! recentf-exclude '("~/.orhc-bibtex-cache"
-                         "~/.emacs.d/.local/*"))
-
 ;; (defun recentf-cleanup
 ;;   (lambda ()
 ;;     (recentf-cleanup)))
@@ -88,17 +88,6 @@
 
 (add-hook 'vterm-mode-hook (lambda () (read-only-mode -1)))
 
-;; file backends
-;; ;; set default `company-backends'
-;; (setq company-backends
-;;       '((company-files          ; files & directory
-;;          company-keywords       ; keywords
-;;          company-capf
-;;          company-yasnippet
-;;          )
-;;         (company-abbrev company-dabbrev)
-;;         ))
-
 (setq! evil-move-cursor-back nil)
 
 (setq! ein:output-area-inlined-images t)
@@ -111,3 +100,10 @@
 (setq! browse-url-browser-function 'browse-url-firefox)
 
 (setq! vterm-always-compile-module t)
+
+;; https://github.com/akermu/emacs-libvterm
+;; (define-key vterm-mode-map (kbd "<C-backspace>")
+;;   (lambda () (interactive) (vterm-send-key (kbd "C-w"))))
+
+(custom-set-variables
+ '(conda-anaconda-home "~/bin/miniconda/"))
