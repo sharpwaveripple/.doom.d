@@ -107,3 +107,8 @@
 
 (custom-set-variables
  '(conda-anaconda-home "~/bin/miniconda/"))
+
+(require 'warnings)
+(add-to-list 'warning-suppress-types '(undo discard-info))
+
+;; (setq org-latex-listings t)
