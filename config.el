@@ -89,6 +89,7 @@
 (add-hook 'vterm-mode-hook (lambda () (read-only-mode -1)))
 
 (setq! evil-move-cursor-back nil)
+(setq evil-want-fine-undo t)
 
 (setq! ein:output-area-inlined-images t)
 
