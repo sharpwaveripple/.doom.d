@@ -108,9 +108,6 @@
 ;; (define-key vterm-mode-map (kbd "<C-backspace>")
 ;;   (lambda () (interactive) (vterm-send-key (kbd "C-w"))))
 
-(custom-set-variables
- '(conda-anaconda-home "~/bin/miniconda/"))
-
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
 
