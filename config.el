@@ -58,7 +58,8 @@
 (global-visual-line-mode t)
 
 (setq! recentf-exclude '("~/.orhc-bibtex-cache"
-                         "~/.emacs.d/.local/*"))
+                         "~/.emacs.d/.local/*"
+                         "\\.tmp$"))
 
 ;; (add-hook 'org-pandoc-after-processing-ms-hook 'recentf-cleanup)
 
