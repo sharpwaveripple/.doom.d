@@ -61,17 +61,6 @@
                          "~/.emacs.d/.local/*"
                          "\\.tmp$"))
 
-;; (add-hook 'org-pandoc-after-processing-ms-hook 'recentf-cleanup)
-
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html
-;; (add-to-list 'recentf-exclude '("\\.tmp?$"))
-;; (defun recentf-cleanup
-;;   (lambda ()
-;;     (recentf-cleanup)))
-
-;; (defun export-to-docx-hook ()
-;;   (when org-pandoc-export-to-docx
-;;     (recentf-cleanup)))
 
 (defun open-popup-on-side (buffer &optional alist)
   (+popup-display-buffer-stacked-side-window-fn
