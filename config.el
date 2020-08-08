@@ -94,8 +94,15 @@
 (setq! vterm-always-compile-module t)
 
 ;; https://github.com/akermu/emacs-libvterm
-;; (define-key vterm-mode-map (kbd "<C-backspace>")
-;;   (lambda () (interactive) (vterm-send-key (kbd "C-w"))))
+(define-key vterm-mode-map (kbd "<C-backspace>")
+  (lambda () (interactive) (vterm-send-key (kbd "C-w"))))
+
+;; https://stackoverflow.com/questions/21756052/how-to-send-c-left-into-emacs-term
+(defun term-send-Cright () (interactive) (term-send-raw-string "\e[1;5C"))
+(defun term-send-Cleft  () (interactive) (term-send-raw-string "\e[1;5D"))
+(define-key vterm-mode-map (kbd "C-<right>") 'term-send-Cright)
+(define-key vterm-mode-map (kbd "C-<left>")  'term-send-Cleft)
+
 
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
