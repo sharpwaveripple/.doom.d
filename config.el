@@ -86,7 +86,6 @@
 
 (use-package recentf
   :hook (kill-emacs-hook . recentf-cleanup))
-;; (add-hook 'kill-emacs-hook 'recentf-cleanup)
 
 (setq! org-startup-folded t)
 
