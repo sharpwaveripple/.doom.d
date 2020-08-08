@@ -83,7 +83,10 @@
 
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-display-inline-images)
-(add-hook 'kill-emacs-hook 'recentf-cleanup)
+
+(use-package recentf
+  :hook (kill-emacs-hook . recentf-cleanup))
+;; (add-hook 'kill-emacs-hook 'recentf-cleanup)
 
 (setq! org-startup-folded t)
 
