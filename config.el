@@ -103,7 +103,6 @@
 (define-key vterm-mode-map (kbd "C-<right>") 'term-send-Cright)
 (define-key vterm-mode-map (kbd "C-<left>")  'term-send-Cleft)
 
-
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
 
