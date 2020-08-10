@@ -11,3 +11,9 @@ In insert mode, type
 
 * Start jupyter notebook
 M-x ein:jupyter-server-start
+* Ein
+Insert cell below
+C-c C-b
+
+Toggle cell type
+C-c C-t
