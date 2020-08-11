@@ -17,3 +17,6 @@ C-c C-b
 
 Toggle cell type
 C-c C-t
+* doom help
+<SPC> h d h
+navigate to module appendix
