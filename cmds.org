@@ -20,3 +20,5 @@ C-c C-t
 * doom help
 <SPC> h d h
 navigate to module appendix
+* Company complete path
+C-x C-f

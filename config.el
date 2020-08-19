@@ -5,6 +5,7 @@
 (setq doom-font (font-spec :family "Deja Vu Sans Mono" :size 18))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(setq frame-resize-pixelwise t)
 
 (setq company-idle-delay 0.3
       company-minimum-prefix-length 2)
@@ -114,3 +115,13 @@
 (add-to-list 'warning-suppress-types '(undo discard-info))
 
 ;; (setq org-latex-listings t)
+;; (setq python-shell-completion-native-disabled-interpreters '("python"))
+
+;; (require 'ob-ein)
+
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((emacs-lisp . t)
+;;    (R . t)
+;;    (python . t)
+;;    (ein . t)))
