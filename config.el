@@ -93,14 +93,6 @@
 
 (setq! browse-url-browser-function 'browse-url-firefox)
 
-(setq! vterm-always-compile-module t)
-
-;; https://github.com/akermu/emacs-libvterm
-;; (define-key vterm-mode-map (kbd "<C-backspace>")
-;;   (lambda () (interactive) (vterm-send-key (kbd "C-w"))))
-
-(add-hook 'vterm-mode-hook (lambda () (read-only-mode -1)))
-
 ;; https://stackoverflow.com/questions/21756052/how-to-send-c-left-into-emacs-term
 (defun vterm-send-Cbackspace () (interactive) (vterm-send-key (kbd "C-w")))
 (defun term-send-Cright () (interactive) (term-send-raw-string "\e[1;5C"))
@@ -110,7 +102,10 @@
   :bind (:map vterm-mode-map
          ("<C-backspace>" . vterm-send-Cbackspace)
          ("C-<right>" . term-send-Cright)
-         ("C-<left>" . term-send-Cleft)))
+         ("C-<left>" . term-send-Cleft))
+  :init
+  (setq vterm-always-compile-module t)
+  (add-hook 'vterm-mode-hook (lambda () (read-only-mode -1))))
 
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
