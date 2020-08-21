@@ -38,6 +38,7 @@
 (evilem-default-keybindings "C-SPC")
 
 (map! :leader
+      :desc "Open ranger" "f d" #'ranger
       :desc "Search buffer" "s b" #'counsel-grep)
 
 (use-package! org-ref
@@ -113,7 +114,7 @@
 
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
-
+(setq ranger-show-hidden t)
 ;; (setq org-latex-listings t)
 ;; (setq python-shell-completion-native-disabled-interpreters '("python"))
 
