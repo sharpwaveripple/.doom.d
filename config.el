@@ -50,6 +50,16 @@
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
+(setq evil-ex-substitute-global t)
+;; (use-package matlab
+;;   :ensure matlab-mode
+;;   :config
+;;   (add-to-list
+;;    'auto-mode-alist
+;;    '("\\.m\\'" . matlab-mode))
+;;   (setq matlab-indent-function t)
+;;   (setq matlab-shell-command "matlab"))
+
 (defun format-biblio ()
   "Make short form biblio on editing the file"
   (when (file-equal-p buffer-file-name "~/work/references/references.bib")
