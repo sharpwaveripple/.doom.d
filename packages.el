@@ -9,3 +9,4 @@
 ;; (package! ox-pandoc)
 
 (package! org-ref)
+(package! auto-sudoedit)

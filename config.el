@@ -50,6 +50,8 @@
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
+(auto-sudoedit-mode 1)
+
 (setq evil-ex-substitute-global t)
 ;; (use-package matlab
 ;;   :ensure matlab-mode
