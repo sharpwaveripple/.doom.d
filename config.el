@@ -13,18 +13,6 @@
 ;; Allow jk and kj to be used as escape keys
 (setq evil-escape-unordered-key-sequence t)
 
-(defun evil-unimpaired-paste-above ()
-  (interactive)
-  (evil-insert-newline-above)
-  (evil-paste-after 1)
-  (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
-
-(defun evil-unimpaired-paste-below ()
-  (interactive)
-  (evil-insert-newline-below)
-  (evil-paste-after 1)
-  (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
-
 (load! "bindings")
 
 (setq display-line-numbers-type nil)
