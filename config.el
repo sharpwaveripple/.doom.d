@@ -25,10 +25,6 @@
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
 
-(map! :leader
-      :desc "Open ranger" "f d" #'ranger
-      :desc "Search buffer" "s b" #'counsel-grep)
-
 (use-package! org-ref
   :after org
   :custom
