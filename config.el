@@ -112,3 +112,15 @@
 ;;    (R . t)
 ;;    (python . t)
 ;;    (ein . t)))
+
+(defun evil-unimpaired-paste-above ()
+  (interactive)
+  (evil-insert-newline-above)
+  (evil-paste-after 1)
+  (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
+
+(defun evil-unimpaired-paste-below ()
+  (interactive)
+  (evil-insert-newline-below)
+  (evil-paste-after 1)
+  (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
