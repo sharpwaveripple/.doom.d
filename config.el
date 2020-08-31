@@ -5,7 +5,6 @@
 (setq doom-font (font-spec :family "Deja Vu Sans Mono" :size 18))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-(setq frame-resize-pixelwise t)
 
 (setq company-idle-delay 0.3
       company-minimum-prefix-length 2)
