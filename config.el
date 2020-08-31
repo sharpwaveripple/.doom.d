@@ -10,7 +10,10 @@
       company-minimum-prefix-length 2)
 
 ;; Allow jk and kj to be used as escape keys
-(setq evil-escape-unordered-key-sequence t)
+(setq evil-escape-unordered-key-sequence t
+      evil-ex-substitute-global t
+      evil-move-cursor-back nil
+      evil-want-fine-undo t)
 
 (load! "bindings")
 
@@ -34,8 +37,6 @@
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
 (auto-sudoedit-mode 1)
-
-(setq evil-ex-substitute-global t)
 
 (use-package matlab
   :config (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
@@ -71,8 +72,6 @@
 (after! ess
   (set-popup-rule! "^\\*R" :actions '(open-popup-on-side)))
 
-(setq! evil-move-cursor-back nil)
-(setq! evil-want-fine-undo t)
 
 (setq! ein:output-area-inlined-images t)
 
