@@ -22,6 +22,9 @@
 
 (setq display-line-numbers-type nil)
 
+(setq truncate-lines t)
+;; https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
+
 (auto-sudoedit-mode 1)
 (global-visual-line-mode t)
 
