@@ -53,14 +53,12 @@
 (auto-sudoedit-mode 1)
 
 (setq evil-ex-substitute-global t)
-;; (use-package matlab
-;;   :ensure matlab-mode
-;;   :config
-;;   (add-to-list
-;;    'auto-mode-alist
-;;    '("\\.m\\'" . matlab-mode))
-;;   (setq matlab-indent-function t)
-;;   (setq matlab-shell-command "matlab"))
+
+(use-package matlab
+  :config (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
+  :custom
+  (matlab-indent-function t)
+  (matlab-shell-command "matlab"))
 
 (defun format-biblio ()
   "Make short form biblio on editing the file"
@@ -122,6 +120,7 @@
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
 (setq ranger-show-hidden t)
+
 ;; (setq org-latex-listings t)
 ;; (setq python-shell-completion-native-disabled-interpreters '("python"))
 

@@ -10,3 +10,4 @@
 
 (package! org-ref)
 (package! auto-sudoedit)
+(package! matlab-mode)
