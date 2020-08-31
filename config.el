@@ -6,26 +6,30 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(setq company-idle-delay 0.3
-      company-minimum-prefix-length 2)
+(load! "bindings")
 
-;; Allow jk and kj to be used as escape keys
 (setq evil-escape-unordered-key-sequence t
       evil-ex-substitute-global t
       evil-move-cursor-back nil
       evil-want-fine-undo t)
 
-(load! "bindings")
+(setq which-key-show-early-on-C-h t
+      which-key-idle-delay 0.3
+      which-key-idle-secondary-delay 0.05)
+
+(setq company-idle-delay 0.3
+      company-minimum-prefix-length 2)
 
 (setq display-line-numbers-type nil)
 
-;; Allow C-h to trigger which-key before it is done automatically
-(setq which-key-show-early-on-C-h t)
-(setq which-key-idle-delay 0.3)
-(setq which-key-idle-secondary-delay 0.05)
+(auto-sudoedit-mode 1)
+(global-visual-line-mode t)
 
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
+
+(use-package recentf
+  :hook (kill-emacs-hook . recentf-cleanup))
 
 (use-package! org-ref
   :after org
@@ -35,8 +39,6 @@
   (org-ref-ivy-cite)
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
-
-(auto-sudoedit-mode 1)
 
 (use-package matlab
   :config (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
@@ -51,12 +53,10 @@
 
 (add-hook 'after-save-hook #'format-biblio)
 (add-hook 'org-mode-hook (lambda () (smartparens-mode -1)))
-(global-visual-line-mode t)
 
 (setq! recentf-exclude '("~/.orhc-bibtex-cache"
                          "~/.emacs.d/.local/*"
                          "\\.tmp$"))
-
 
 (defun open-popup-on-side (buffer &optional alist)
   (+popup-display-buffer-stacked-side-window-fn
@@ -64,8 +64,6 @@
                     (size . 0.4))
                   alist)))
 
-;; Wrap in an `after!' block so that you popup rule takes precedence over
-;; default ones.
 (after! python
   (set-popup-rule! "^\\*Python" :actions '(open-popup-on-side)))
 
@@ -77,9 +75,6 @@
 
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (add-hook 'org-mode-hook 'org-display-inline-images)
-
-(use-package recentf
-  :hook (kill-emacs-hook . recentf-cleanup))
 
 (setq! org-startup-folded t)
 
