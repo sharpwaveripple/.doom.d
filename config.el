@@ -25,6 +25,9 @@
 (setq truncate-lines t)
 ;; https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
 
+;; food for indented thought
+;; https://emacs.stackexchange.com/questions/31454/evil-mode-how-to-run-evil-indent-on-the-text-ive-just-pasted
+
 (auto-sudoedit-mode 1)
 (global-visual-line-mode t)
 
@@ -72,7 +75,6 @@
 
 (after! ess
   (set-popup-rule! "^\\*R" :actions '(open-popup-on-side)))
-
 
 (setq! ein:output-area-inlined-images t)
 
