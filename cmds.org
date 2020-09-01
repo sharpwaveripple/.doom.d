@@ -22,3 +22,7 @@ C-c C-t
 navigate to module appendix
 * Company complete path
 C-x C-f
+* Goto definition
+gd
+* Toggle zen
+<SPC> t z
