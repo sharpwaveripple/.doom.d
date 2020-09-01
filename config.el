@@ -33,8 +33,13 @@
 ;; food for indented thought
 ;; https://emacs.stackexchange.com/questions/31454/evil-mode-how-to-run-evil-indent-on-the-text-ive-just-pasted
 
-(auto-sudoedit-mode 1)
+(display-time-mode t)
+(setq display-time-default-load-average nil)
+(display-battery-mode t)
 (global-visual-line-mode t)
+(auto-sudoedit-mode 1)
+
+(setq projectile-switch-project-action 'projectile-dired)
 
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
