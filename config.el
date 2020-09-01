@@ -39,8 +39,6 @@
 (global-visual-line-mode t)
 (auto-sudoedit-mode 1)
 
-(setq projectile-switch-project-action 'projectile-dired)
-
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
 
