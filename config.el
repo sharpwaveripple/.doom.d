@@ -4,7 +4,12 @@
 
 (setq doom-font (font-spec :family "Deja Vu Sans Mono" :size 18))
 
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;; https://tecosaur.github.io/emacs-config/config.html
+(if (eq initial-window-system 'x)
+    (toggle-frame-maximized)
+  (toggle-frame-fullscreen))
+
+;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (load! "bindings")
 
@@ -126,3 +131,19 @@
   (evil-insert-newline-below)
   (evil-paste-after 1)
   (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
+
+;; look at literate config
+;; https://github.com/nmartin84/.doom.d#org36d0b20
+(defun replace-in-string (what with in)
+  (replace-regexp-in-string (regexp-quote what) with in nil 'literal))
+
+(defun org-html--format-image (source attributes info)
+  (progn
+    (setq source (replace-in-string "%20" " " source))
+    (format "<img src=\"data:image/%s;base64,%s\"%s />"
+            (or (file-name-extension source) "")
+            (base64-encode-string
+             (with-temp-buffer
+               (insert-file-contents-literally source)
+               (buffer-string)))
+            (file-name-nondirectory source))))
