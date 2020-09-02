@@ -3,6 +3,7 @@
 ;; Place your private configuration here
 
 (setq doom-font (font-spec :family "Deja Vu Sans Mono" :size 18))
+(setq confirm-kill-emacs nil)
 
 ;; https://tecosaur.github.io/emacs-config/config.html
 (if (eq initial-window-system 'x)
@@ -54,6 +55,9 @@
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
+(add-hook 'org-mode-hook (lambda () (setq doom-modeline-enable-word-count t)))
+(setq doom-modeline-buffer-encoding nil)
+
 (use-package matlab
   :config (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
   :custom
@@ -70,6 +74,7 @@
 
 (setq! recentf-exclude '("~/.orhc-bibtex-cache"
                          "~/.emacs.d/.local/*"
+                         "\\COMMIT_EDITMSG$"
                          "\\.tmp$"))
 
 (defun open-popup-on-side (buffer &optional alist)
