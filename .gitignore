@@ -5,4 +5,5 @@ tmp/
 
 custom.el
 flycheck_init.elc
+flycheck_init.el
 flycheck_config.el
