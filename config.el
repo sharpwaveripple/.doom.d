@@ -34,11 +34,13 @@
 ;; food for indented thought
 ;; https://emacs.stackexchange.com/questions/31454/evil-mode-how-to-run-evil-indent-on-the-text-ive-just-pasted
 
+(setq display-time-day-and-date t
+      display-time-format "%I:%M %p %e %b %Y"
+      display-time-default-load-average nil)
 (display-time-mode t)
-(setq display-time-default-load-average nil)
 (display-battery-mode t)
 (global-visual-line-mode t)
-(auto-sudoedit-mode 1)
+(auto-sudoedit-mode t)
 
 (global-unset-key (kbd "C-SPC"))
 (evilem-default-keybindings "C-SPC")
@@ -114,7 +116,6 @@
 
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
-(setq ranger-show-hidden t)
 
 ;; (setq org-latex-listings t)
 ;; (setq python-shell-completion-native-disabled-interpreters '("python"))
