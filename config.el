@@ -156,3 +156,5 @@
                (insert-file-contents-literally source)
                (buffer-string)))
             (file-name-nondirectory source))))
+
+(setq initial-buffer-choice "/home/jon/life/food.org")
