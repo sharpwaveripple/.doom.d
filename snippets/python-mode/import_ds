@@ -1,9 +1,10 @@
 # -*- mode: snippet -*-
 # name: import-ds
-# key: import-ds
+# key: import-ds 
 # --
 import numpy as np
 import pandas as pd
-from scipy.stats import (pearsonr)
 import matplotlib.pyplot as plt
-import seaborn as sns
+
+
+df = pd.read_csv("")
