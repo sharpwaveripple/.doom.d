@@ -57,14 +57,13 @@
   :init
   (add-hook 'org-mode-hook (lambda () (require 'org-ref))))
 
-(add-hook 'org-mode-hook (lambda () (setq doom-modeline-enable-word-count t)))
 (setq doom-modeline-buffer-encoding nil)
 
 (use-package matlab
-  :config (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
-  :custom
-  (matlab-indent-function t)
-  (matlab-shell-command "matlab"))
+ :config (add-to-list 'auto-mode-alist '("\\.m\\'" . matlab-mode))
+ :custom
+ (matlab-indent-function t)
+ (matlab-shell-command "matlab"))
 
 (defun format-biblio ()
   "Make short form biblio on editing the file"
